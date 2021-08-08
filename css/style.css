@@ -75,6 +75,14 @@ p {
 .nav-link.current {
   color: var(--accent-color);
 }
+.nav-link.current::after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 100%;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
 .nav-link {
   color: var(--second-color-black);
   text-decoration: none;
@@ -370,6 +378,7 @@ p {
   height: 44px;
   align-items: center;
   justify-content: center;
+  border-radius: 50%;
 }
 .icons-social {
   width: 20px;
