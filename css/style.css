@@ -75,14 +75,7 @@ p {
 .nav-link.current {
   color: var(--accent-color);
 }
-.nav-link.current::after {
-  content: "";
-  display: block;
-  height: 4px;
-  width: 100%;
-  background-color: var(--accent-color);
-  border-radius: 2px;
-}
+
 .nav-link {
   color: var(--second-color-black);
   text-decoration: none;
@@ -118,24 +111,15 @@ p {
   display: flex;
 }
 /* Оформление svg-иконок в навигации header */
-.contacts-link :hover.contacts-svg-mail,
-.contacts-link :focus.contacts-svg-mail,
-.contacts-link :hover.contacts-svg-tel,
-.contacts-link :focus.contacts-svg-tel {
+.contacts-link :hover.contacts-svg,
+.contacts-link :focus.contacts-svg {
   fill: var(--accent-color);
 }
-.contacts-svg-mail {
-  width: 16px;
-  height: 12px;
-  fill: #757575;
+.contacts-svg {
   margin-right: 10px;
+  fill: currentColor;
 }
-.contacts-svg-tel {
-  width: 16px;
-  height: 12px;
-  fill: #757575;
-  margin-right: 10px;
-}
+
 /*Оформление нафигации footer*/
 .footer-contacts.item {
   letter-spacing: 0.02em;
@@ -150,8 +134,6 @@ p {
   background-color: #2f303a;
   padding-top: 60px;
   padding-bottom: 60px;
-  display: flex;
-  align-items: baseline;
 }
 .contacts-link-footer {
   color: rgba(255, 255, 255, 0.6);
@@ -163,7 +145,7 @@ p {
   padding-bottom: 9px;
 }
 .heading-footer {
-  padding-bottom: 20px;
+  margin-bottom: 20px;
   color: var(--second-color-white);
 }
 
@@ -175,27 +157,29 @@ p {
   display: flex;
   width: 44px;
   height: 44px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 .footer-icons {
-  display: flex;
   fill: white;
   width: 20px;
   height: 20px;
-  margin-right: 10px;
-  justify-content: center;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
 }
 .container.footer {
   display: flex;
   align-items: baseline;
 }
-.footer-link :hover.footer-icons,
-.footer-link :focus.footer-icons {
-  fill: white;
+.footer-element {
+  margin-right: 70px;
+}
+.footer-item {
+  margin-right: 10px;
+}
+.footer-link:hover,
+.footer-link:focus {
   background-color: var(--accent-color);
-  border-radius: 50%;
 }
 /* Оформление  кнопок*/
 .hero-button {
@@ -228,7 +212,7 @@ p {
   cursor: pointer;
   padding: 6px 22px;
   display: inline-block;
-  min-width: 128px;
+  min-width: 73px;
   text-align: center;
 }
 .filter-item :focus,
@@ -365,7 +349,7 @@ p {
 .team-item:not(:last-child) {
   margin-right: 30px;
 }
-.team-icons {
+.social-icons {
   display: flex;
   width: 100%;
   align-items: center;
@@ -373,7 +357,6 @@ p {
 }
 .icons-link {
   display: flex;
-  margin-right: 10px;
   width: 44px;
   height: 44px;
   align-items: center;
@@ -385,11 +368,16 @@ p {
   height: 20px;
   fill: #afb1b8;
 }
-.icons-link :hover.icons-social,
-.icons-link :focus.icons-social {
+.icons-link:hover .icons-social,
+.icons-link:focus .icons-social {
   fill: white;
+}
+.icons-link:hover,
+.icons-link:focus {
   background-color: var(--accent-color);
-  border-radius: 50%;
+}
+.social-item {
+  margin-right: 10px;
 }
 
 /* Оформление секции наши клиенты */
@@ -404,21 +392,26 @@ p {
   align-items: center;
   border: 1px solid #afb1b8;
   justify-content: center;
-  margin-right: 30px;
   border-radius: 5%;
 }
-.client-link-icons :hover,
-.client-link-icons :focus {
-  border-color: var(--accent-color);
-  fill: var(--accent-color);
+.client-item {
+  margin-right: 30px;
 }
+
 .clients-icons {
   display: flex;
   width: 106px;
   height: 60px;
   fill: #afb1b8;
 }
-
+.clients-link:hover,
+.clients-link:focus {
+  border-color: var(--accent-color);
+}
+.clients-link:hover .clients-icons,
+.clients-link:focus .clients-icons {
+  fill: var(--accent-color);
+}
 /* Оформление страницы,секции портфолио */
 .portfolio-title-description {
   padding-top: 20px;
@@ -433,11 +426,12 @@ p {
   margin-right: 30px;
   margin-bottom: 30px;
 }
-.portfolio-item :focus,
-.portfolio-item :hover {
+.portfolio-link:hover,
+.portfolio-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
+
 .portfolio-title {
   font-weight: 700;
   font-size: 18px;
